@@ -1,0 +1,43 @@
+<%- include("../partial/header")%>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="list-group">
+			  <a href="#" class="list-group-item active">
+				Info
+			  </a>
+			  <a href="#" class="list-group-item">Info</a>
+			  <a href="#" class="list-group-item">Info</a>
+		</div>
+		</div>
+		<div class="col-md-9">
+			<div class="thumbnail">
+				<p><img class="img-responsive" src="<%=foundCampground.image%>"></p>
+				<div class="caption-full">
+					<h4 class="pull-right">$90.00/night</h4>
+					<h4><a href=""><%=foundCampground.name%></a></h4>
+				    <p><%=foundCampground.description%></p>
+				</div>
+			</div>
+			<div class="well">
+				<div class="text-right">
+					<a class="btn btn-success" href="/campgrounds/<%=foundCampground._id%>/comments/new">Add New Comments</a>
+				</div>
+			<hr>
+		<div class="row">
+		<div class="col-md-12">
+		<%foundCampground.comments.forEach(function(comment){%>
+		<strong><%=comment.author%></strong>
+		<span class="pull-right">9 days ago</span>
+		<p>  
+		  <%=comment.content%>
+        </p>
+		</div>
+	</div>
+	<%})%>
+	    </div>	
+	</div>	
+  </div>
+</div>
+
+<%- include("../partial/footer")%>
